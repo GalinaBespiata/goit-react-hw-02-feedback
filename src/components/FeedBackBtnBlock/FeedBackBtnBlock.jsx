@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
+import css from '../FeedBackBtnBlock/FeedBackBtnBlock.module.css';
 
 export function RenderBtn({ options, onLeaveFeedback = () => {} }) {
   return (
-    <>
+    <div style={{ color: '#009688' }}>
       <h1 className="">Please leave feedBack</h1>
-      <div>
+      <div className={css.btnBlock}>
         {options.map((option, idx) => {
           return (
             <button
               key={idx}
               name={option}
-              className=""
+              className={css.btnFeedBack}
               type="button"
               onClick={() => onLeaveFeedback(option)}
             >
@@ -19,7 +20,7 @@ export function RenderBtn({ options, onLeaveFeedback = () => {} }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 RenderBtn.propTypes = {
